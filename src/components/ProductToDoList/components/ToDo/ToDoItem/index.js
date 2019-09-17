@@ -21,6 +21,12 @@ class ToDoItem extends React.Component{
         }
         
     }
+    componentDidMount = () => {
+        console.log(this.props.name + " mounted");
+    }
+    componentWillUnmount = () => {
+        console.log(this.props.name + " unmounted");
+    }
     render = () => (
         <form className="itemForm" >
             <input type="checkbox" onChange = {this.strikeThrough}></input>

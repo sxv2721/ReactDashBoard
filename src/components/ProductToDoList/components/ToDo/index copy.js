@@ -12,8 +12,20 @@ class ToDo extends React.Component {
         super(props);
         this.state = {
             input: "Add New Task",
-            items: ["Travelagent India", "Top things to see during a holiday in Hong Kong", "Copper Canyon", "See the unmatched beauty of the Great Lakes", "Become A Travel Pro in One Easy Lesson"]
+            items: ["Travelagent India", "Top things to see during a holiday in Hong Kong", "Copper Canyon", "See the unmatched beauty of the Great Lakes", "Become A Travel Pro in One Easy Lesson"],
+            
         }
+        this.state = {
+            itemsMap: this.state.items.map((item, index) => {
+            
+                return(
+                <div className="item" key={item + index}><ToDoItem name={item} />
+                    <button onClick={this.handleRemove} value={index}>
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                        </button></div>
+            )}
+        )}
+        
         this.handleInput = this.handleInput.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
@@ -26,35 +38,37 @@ class ToDo extends React.Component {
     }
     handleAdd = (event) => {
         event.preventDefault();
-        this.setState({
+        this.setState((state) => ({
             items: [...this.state.items, this.state.input],
             input: "Add New Task"
-        });
+        }));
         console.log(this.state.items);
     }
     handleRemove = (event) => {
         event.preventDefault();
         let tempItems = this.state.items;
-        console.log(tempItems);
-        tempItems.splice(event.currentTarget.value,1);
-        console.log(tempItems);
-        this.setState({
-            items: tempItems
+        let tempMap = this.state.itemsMap;
+        console.log(tempMap);
+        //tempItems.splice(event.currentTarget.value, 1);
+        //tempMap.splice(event.currentTarget.value, 1);
+        
+        this.setState((state) => {
+            return {
+                items: [...tempItems],
+                itemsMap: [...tempMap]
+            } 
         });
         console.log(event.currentTarget.value);
+        console.log(this.state.items);
     }
 
     render = () => {
-        const itemsMap = this.state.items.map((item, index) => (
-            <div className="item" key={item + index}><ToDoItem name={item} />
-                <button onClick={this.handleRemove} value={index}>
-                    <FontAwesomeIcon icon={faTrashAlt} />
-                    </button></div>
-        ));
+        
 
         return (<div className="toDo" id="toDo">
             <h3 className="toDoTitle">To Do List</h3>
-            {itemsMap}
+            {console.log(this.state.itemsMap)}
+            {this.state.itemsMap}
             <form className="newTask" onSubmit={this.handleAdd}>
                 <input 
                     type="text"
