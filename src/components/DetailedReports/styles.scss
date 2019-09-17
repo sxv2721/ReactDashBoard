@@ -1,0 +1,41 @@
+.reports{
+    display: flex;
+    box-shadow: 5px 5px 10px -5px darkgray;
+    flex-direction: column;
+    background-color: white;
+    margin: 0% 3%;
+}
+.report23{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    padding: 10px;
+}
+.detailedReportsTitle{
+    font-size: 14px;
+    margin: 10px 0px 0px 15px;
+    color: gray;
+}
+
+
+@media only screen and (min-width: 500px){
+    .reports{
+        margin: 2% 3%;
+    }
+    .report23{
+        flex-direction: row;
+    }
+    .report1{
+        flex: 2;
+    }
+}
+@media only screen and (min-width: 800px){
+    .reports{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .detailedReportsTitle{
+        width: 100%;
+
+    }
+}

@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    width: 99%;
+    position: fixed;
+}
+.rightGroup{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    margin-right: 10px;
+
+}
+.hamburgerMenu{
+    padding:0px;
+    border: 0px;
+}
+
+.leftGroup{
+    display: flex;
+    flex: 4;
+}

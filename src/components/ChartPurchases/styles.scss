@@ -1,0 +1,18 @@
+.chartPurchases{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@media only screen and (min-width: 500px){
+    .chartPurchases {
+      margin: 0% 3%;
+
+    }
+}
+@media only screen and (min-width: 800px){
+    .chartPurchases{
+      margin: 0% 0% 0% 3%;
+    }
+}

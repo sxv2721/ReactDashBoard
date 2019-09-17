@@ -1,0 +1,47 @@
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.tableRow{
+    padding-top: 5px;
+    padding-right: 0px;
+}
+td{
+    padding: 10px 0px;
+    width: 10px;
+}
+
+// $colors: Red, Orange, Green, Blue;
+// @each $color in $colors{
+//     .status#{$color}{
+        
+//     }
+// }
+.statusRed{ 
+    padding-left: 5px;
+    color: white;
+    background-color: red;
+    width: 65px;
+}
+.statusOrange{ 
+    padding-left: 5px;
+    background-color: Orange;
+    width: 85px;
+}
+.statusGreen{ 
+    padding-left: 5px;
+    color: white;
+    background-color: lightGreen;
+    width: 70px;
+}
+.statusBlue{ 
+    padding-left: 5px;
+    background-color: lightBlue;
+    width: 42px;
+}
+.line{
+    border-top: 2px solid lightgray;
+    padding-right: 100%
+}

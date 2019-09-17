@@ -1,0 +1,23 @@
+.topBoxes{
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+    flex-basis: auto;
+    flex-direction: column;
+    margin: 0% 0%;
+}
+
+@media only screen and (min-width: 500px){
+    .topBoxes{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 98%;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .topBoxes{
+        width: 94%;
+        margin-left: 3%;
+    }
+}
