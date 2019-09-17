@@ -1,26 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
+import NavBar from './components/NavBar';
+import Header from './components/Header';
+import {TopBoxes} from './components/TopBoxes';
+import ChartPurchases from './components/ChartPurchases';
+import ProductToDoList from './components/ProductToDoList';
+import DetailedReports from './components/DetailedReports';
+import Footer from './components/Footer';
+import './App.scss';
+import "./highcharts-compare-data-using-column-chart.png"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = ({sales, revenue, downloads, returns}) => (
+  <>
+    <NavBar />
+    <Header />
+    <main>
+      <TopBoxes 
+        sales={sales} 
+        revenue={revenue}
+        downloads={downloads} 
+        returns={returns}
+      />
+      <ChartPurchases />
+      <ProductToDoList />
+      <DetailedReports />
+    </main>
+    <Footer />
+  </>
+
+);
+App.defaultProps = {
+  sales:{
+    total: 34040
+  },
+  revenue: {
+    total: 47033
+  },
+  downloads: {
+    total: 40016
+  },
+  returns: {
+    total: 61344
+  }
+}
+App.propTypes = {
+  sales: PropTypes.shape({
+    total: PropTypes.number.isRequired,
+  }).isRequired,
+  revenue: PropTypes.shape({
+    total: PropTypes.number.isRequired,
+  }).isRequired,
+  downloads: PropTypes.shape({
+    total: PropTypes.number.isRequired,
+  }).isRequired,
+  returns: PropTypes.shape({
+    total: PropTypes.number.isRequired,
+  }).isRequired,
 }
 
 export default App;
